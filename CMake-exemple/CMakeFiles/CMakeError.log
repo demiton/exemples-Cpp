@@ -1,0 +1,8 @@
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/fcisse/Documents/Github/exemples-Cpp/CMake-exemple/CMakeFiles/CMakeTmp
+
+Run Build Command:"nmake" "/NOLOGO" "cmTC_94931\fast"
+Le fichier spécifié est introuvable
+Generator: execution of make failed. Make command was: "nmake" "/NOLOGO" "cmTC_94931\fast"
+
+
