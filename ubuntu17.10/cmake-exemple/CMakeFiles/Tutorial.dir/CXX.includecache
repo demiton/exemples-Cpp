@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fabien/git/exemples-Cpp/ubuntu17.10/cmake-exemple/tutorial.cxx
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+
