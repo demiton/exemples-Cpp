@@ -29,14 +29,17 @@ SOURCES += \
     circleWidget.cpp \
     vextexwidget.cpp \
     graphObject.cpp \
-    vertexobject.cpp
+    vertexobject.cpp \
+    item.cpp
 
 HEADERS += \
         mainwindow.h \
     circleWidget.h \
     vertexwidget.h \
     graphObject.h \
-    vertexobject.h
+    vertexobject.h \
+    item.h \
+    directives.h
 
 FORMS += \
         mainwindow.ui

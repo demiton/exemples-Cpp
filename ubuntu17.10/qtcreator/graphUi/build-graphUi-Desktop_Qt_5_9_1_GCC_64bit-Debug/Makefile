@@ -55,13 +55,15 @@ SOURCES       = ../graphUi/main.cpp \
 		../graphUi/circleWidget.cpp \
 		../graphUi/vextexwidget.cpp \
 		../graphUi/graphObject.cpp \
-		../graphUi/vertexobject.cpp moc_mainwindow.cpp
+		../graphUi/vertexobject.cpp \
+		../graphUi/item.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		circleWidget.o \
 		vextexwidget.o \
 		graphObject.o \
 		vertexobject.o \
+		item.o \
 		moc_mainwindow.o
 DIST          = /home/fabien/Qt5.9.1/5.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/mkspecs/common/unix.conf \
@@ -246,12 +248,15 @@ DIST          = /home/fabien/Qt5.9.1/5.9.1/gcc_64/mkspecs/features/spec_pre.prf 
 		../graphUi/circleWidget.h \
 		../graphUi/vertexwidget.h \
 		../graphUi/graphObject.h \
-		../graphUi/vertexobject.h ../graphUi/main.cpp \
+		../graphUi/vertexobject.h \
+		../graphUi/item.h \
+		../graphUi/directives.h ../graphUi/main.cpp \
 		../graphUi/mainwindow.cpp \
 		../graphUi/circleWidget.cpp \
 		../graphUi/vextexwidget.cpp \
 		../graphUi/graphObject.cpp \
-		../graphUi/vertexobject.cpp
+		../graphUi/vertexobject.cpp \
+		../graphUi/item.cpp
 QMAKE_TARGET  = graphUi
 DESTDIR       = 
 TARGET        = graphUi
@@ -645,8 +650,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/fabien/Qt5.9.1/5.9.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../graphUi/mainwindow.h ../graphUi/circleWidget.h ../graphUi/vertexwidget.h ../graphUi/graphObject.h ../graphUi/vertexobject.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../graphUi/main.cpp ../graphUi/mainwindow.cpp ../graphUi/circleWidget.cpp ../graphUi/vextexwidget.cpp ../graphUi/graphObject.cpp ../graphUi/vertexobject.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../graphUi/mainwindow.h ../graphUi/circleWidget.h ../graphUi/vertexwidget.h ../graphUi/graphObject.h ../graphUi/vertexobject.h ../graphUi/item.h ../graphUi/directives.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../graphUi/main.cpp ../graphUi/mainwindow.cpp ../graphUi/circleWidget.cpp ../graphUi/vextexwidget.cpp ../graphUi/graphObject.cpp ../graphUi/vertexobject.cpp ../graphUi/item.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../graphUi/mainwindow.ui $(DISTDIR)/
 
 
@@ -785,6 +790,11 @@ moc_mainwindow.cpp: /home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QMainWin
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qicon.h \
+		../graphUi/graphObject.h \
+		../graphUi/vertexobject.h \
+		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QWidget \
+		../graphUi/item.h \
+		../graphUi/directives.h \
 		../graphUi/mainwindow.h \
 		moc_predefs.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/bin/moc
@@ -913,6 +923,11 @@ main.o: ../graphUi/main.cpp ../graphUi/mainwindow.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qicon.h \
+		../graphUi/graphObject.h \
+		../graphUi/vertexobject.h \
+		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QWidget \
+		../graphUi/item.h \
+		../graphUi/directives.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QApplication \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/qapplication.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtCore/qcoreapplication.h \
@@ -921,7 +936,6 @@ main.o: ../graphUi/main.cpp ../graphUi/mainwindow.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qguiapplication.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qinputmethod.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/QMouseEvent \
-		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QWidget \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/QPainter \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qpainter.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qtextoption.h \
@@ -1034,6 +1048,11 @@ mainwindow.o: ../graphUi/mainwindow.cpp ../graphUi/mainwindow.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qicon.h \
+		../graphUi/graphObject.h \
+		../graphUi/vertexobject.h \
+		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QWidget \
+		../graphUi/item.h \
+		../graphUi/directives.h \
 		ui_mainwindow.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtCore/QVariant \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QAction \
@@ -1071,8 +1090,7 @@ mainwindow.o: ../graphUi/mainwindow.cpp ../graphUi/mainwindow.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QStatusBar \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/qstatusbar.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QToolBar \
-		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/qtoolbar.h \
-		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QWidget
+		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/qtoolbar.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../graphUi/mainwindow.cpp
 
 circleWidget.o: ../graphUi/circleWidget.cpp ../graphUi/circleWidget.h \
@@ -1288,6 +1306,7 @@ vextexwidget.o: ../graphUi/vextexwidget.cpp ../graphUi/vertexwidget.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o vextexwidget.o ../graphUi/vextexwidget.cpp
 
 graphObject.o: ../graphUi/graphObject.cpp ../graphUi/graphObject.h \
+		../graphUi/vertexobject.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/QWidget \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/qwidget.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1387,11 +1406,16 @@ graphObject.o: ../graphUi/graphObject.cpp ../graphUi/graphObject.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtCore/qfile.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtCore/qfiledevice.h \
 		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qvector2d.h \
-		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qtouchdevice.h
+		/home/fabien/Qt5.9.1/5.9.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../graphUi/item.h \
+		../graphUi/directives.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o graphObject.o ../graphUi/graphObject.cpp
 
 vertexobject.o: ../graphUi/vertexobject.cpp ../graphUi/vertexobject.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o vertexobject.o ../graphUi/vertexobject.cpp
+
+item.o: ../graphUi/item.cpp ../graphUi/item.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o item.o ../graphUi/item.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
