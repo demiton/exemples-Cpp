@@ -19,7 +19,7 @@ set(AM_MOC_INCLUDES "/home/fabien/git/exemples-Cpp/ubuntu17.10/qtcreator/build-u
 set(AM_MOC_OPTIONS "")
 set(AM_MOC_RELAXED_MODE "FALSE")
 set(AM_MOC_DEPEND_FILTERS "")
-set(AM_MOC_PREDEFS_CMD "/usr/bin/g++-7;-dM;-E;-c;/usr/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp")
+set(AM_MOC_PREDEFS_CMD "/usr/bin/x86_64-linux-gnu-g++;-dM;-E;-c;/usr/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp")
 # UIC settings
 set(AM_UIC_SKIP )
 set(AM_UIC_TARGET_OPTIONS )
